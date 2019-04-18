@@ -1,0 +1,232 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        04/17/2019  20:46:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj TO main
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  main (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001BH     UNIT         _DATA_GROUP_
+            DATA    0023H     0001H     UNIT         ?DT?MAIN
+            IDATA   0024H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0982H     0083H     UNIT         ?PR?_DISPLAY8279?MAIN
+            CODE    0A05H     0034H     UNIT         ?PR?MAIN?MAIN
+            CODE    0A39H     0028H     UNIT         ?PR?_DELAY?MAIN
+            CODE    0A61H     0017H     UNIT         ?CO?MAIN
+            CODE    0A78H     0013H     UNIT         ?PR?_SETDA?MAIN
+            CODE    0A8BH     0010H     UNIT         ?PR?GETAD?MAIN
+            CODE    0A9BH     000DH     UNIT         ?PR?CLEAR8279?MAIN
+            CODE    0AA8H     000AH     UNIT         ?PR?TEST?MAIN
+            CODE    0AB2H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   main (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                  0008H    0002H
+  +--> ?PR?CLEAR8279?MAIN
+  +--> ?PR?_DISPLAY8279?MAIN
+  +--> ?PR?_SETDA?MAIN
+  +--> ?PR?GETAD?MAIN
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/17/2019  20:46:47  PAGE 2
+
+
+  +--> ?PR?TEST?MAIN
+
+?PR?CLEAR8279?MAIN             -----    -----
+  +--> ?PR?_DELAY?MAIN
+
+?PR?_DISPLAY8279?MAIN          000AH    0019H
+  +--> ?CO?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?PR?_SETDA?MAIN                -----    -----
+  +--> ?PR?_DELAY?MAIN
+
+?PR?TEST?MAIN                  -----    -----
+  +--> ?PR?_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  main (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0A05H         PUBLIC        main
+  C:0A78H         PUBLIC        _setDA
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0982H         PUBLIC        _display8279
+  D:0023H         PUBLIC        AUTO
+  B:0090H.1       PUBLIC        AD_EOC
+  C:0AA8H         PUBLIC        test
+  C:0A61H         SYMBOL        _?ix1000
+  C:0A67H         SYMBOL        _?ix1001
+  C:0A8BH         PUBLIC        getAD
+  B:0090H.0       PUBLIC        LED
+  C:0A9BH         PUBLIC        clear8279
+  D:00C8H         PUBLIC        T2CON
+  C:0A43H         PUBLIC        _delay
+  D:00D0H         PUBLIC        PSW
+  C:0A3CH         SYMBOL        L?0025
+  C:0A3EH         SYMBOL        L?0026
+  -------         PROC          L?0024
+  -------         ENDPROC       L?0024
+  C:0A3CH         SYMBOL        L?0025
+  C:0A3EH         SYMBOL        L?0026
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0A43H         LINE#         16
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/17/2019  20:46:47  PAGE 3
+
+
+  C:0A43H         LINE#         18
+  C:0A4CH         LINE#         19
+  C:0A60H         LINE#         20
+  -------         ENDPROC       _DELAY
+  -------         PROC          TEST
+  C:0AA8H         LINE#         23
+  C:0AA8H         LINE#         24
+  C:0AAFH         LINE#         25
+  C:0AB1H         LINE#         26
+  -------         ENDPROC       TEST
+  -------         PROC          CLEAR8279
+  C:0A9BH         LINE#         28
+  C:0A9BH         LINE#         29
+  C:0AA1H         LINE#         30
+  -------         ENDPROC       CLEAR8279
+  -------         PROC          _DISPLAY8279
+  D:000AH         SYMBOL        a
+  D:000BH         SYMBOL        b
+  -------         DO            
+  D:000CH         SYMBOL        a_
+  D:0012H         SYMBOL        b_
+  D:0001H         SYMBOL        hunderth
+  D:0003H         SYMBOL        tenth
+  D:0002H         SYMBOL        oneth
+  -------         ENDDO         
+  C:0982H         LINE#         33
+  C:0986H         LINE#         34
+  C:0999H         LINE#         35
+  C:09ACH         LINE#         36
+  C:09ADH         LINE#         37
+  C:09ADH         LINE#         38
+  C:09ADH         LINE#         39
+  C:09B4H         LINE#         40
+  C:09C1H         LINE#         41
+  C:09C9H         LINE#         42
+  C:09CEH         LINE#         43
+  C:09D1H         LINE#         44
+  C:09D1H         LINE#         45
+  C:09D8H         LINE#         46
+  C:09DBH         LINE#         47
+  C:09DEH         LINE#         48
+  C:09E1H         LINE#         49
+  C:09E8H         LINE#         50
+  C:09EBH         LINE#         51
+  C:09EEH         LINE#         52
+  C:09F1H         LINE#         53
+  C:09F8H         LINE#         54
+  C:09FBH         LINE#         55
+  C:0A04H         LINE#         56
+  -------         ENDPROC       _DISPLAY8279
+  -------         PROC          GETAD
+  -------         DO            
+  D:0007H         SYMBOL        ret
+  -------         ENDDO         
+  C:0A8BH         LINE#         58
+  C:0A8BH         LINE#         59
+  C:0A8DH         LINE#         60
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/17/2019  20:46:47  PAGE 4
+
+
+  C:0A92H         LINE#         61
+  C:0A95H         LINE#         62
+  C:0A95H         LINE#         63
+  C:0A9AH         LINE#         64
+  C:0A9AH         LINE#         65
+  -------         ENDPROC       GETAD
+  -------         PROC          _SETDA
+  D:0003H         SYMBOL        a
+  C:0A78H         LINE#         67
+  C:0A7AH         LINE#         69
+  C:0A7EH         LINE#         70
+  C:0A81H         LINE#         71
+  C:0A84H         LINE#         72
+  -------         ENDPROC       _SETDA
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        template
+  D:0009H         SYMBOL        AD
+  -------         ENDDO         
+  C:0A05H         LINE#         74
+  C:0A05H         LINE#         75
+  C:0A08H         LINE#         76
+  C:0A0BH         LINE#         77
+  C:0A0EH         LINE#         78
+  C:0A15H         LINE#         79
+  C:0A15H         LINE#         80
+  C:0A18H         LINE#         81
+  C:0A1FH         LINE#         82
+  C:0A21H         LINE#         83
+  C:0A23H         LINE#         84
+  C:0A28H         LINE#         85
+  C:0A28H         LINE#         87
+  C:0A2FH         LINE#         88
+  C:0A34H         LINE#         89
+  C:0A37H         LINE#         90
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0141H BYTE (15%) *
+******************************************************************************
+
+Program Size: data=37.0 xdata=0 code=697
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

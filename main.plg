@@ -1,0 +1,159 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\×ÀÃæ\DENGWEI\main.uv2
+Project File Date:  04/17/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=148
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?MAIN
+Program Size: data=10.0 xdata=0 code=178
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(25): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=192
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(29): error C202: 'uhar': undefined identifier
+MAIN.C(29): error C141: syntax error near 'a_'
+MAIN.C(29): error C141: syntax error near '{'
+MAIN.C(29): error C141: syntax error near '}'
+MAIN.C(30): error C141: syntax error near 'unsigned'
+MAIN.C(30): error C141: syntax error near '{'
+MAIN.C(30): error C141: syntax error near '}'
+MAIN.C(31): error C141: syntax error near 'unsigned'
+MAIN.C(32): error C141: syntax error near 'unsigned'
+MAIN.C(32): error C202: 'tenth': undefined identifier
+MAIN.C(33): error C141: syntax error near 'unsigned'
+MAIN.C(33): error C202: 'oneth': undefined identifier
+MAIN.C(34): error C202: 'hunderth': undefined identifier
+MAIN.C(35): error C202: 'tenth': undefined identifier
+MAIN.C(36): error C202: 'oneth': undefined identifier
+MAIN.C(40): error C202: 'a_': undefined identifier
+MAIN.C(42): error C202: 'hunderth': undefined identifier
+MAIN.C(44): error C202: 'a_': undefined identifier
+MAIN.C(46): error C202: 'tenth': undefined identifier
+MAIN.C(48): error C202: 'a_': undefined identifier
+MAIN.C(50): error C202: 'oneth': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(29): error C202: 'uhar': undefined identifier
+MAIN.C(29): error C141: syntax error near 'a_'
+MAIN.C(29): error C141: syntax error near '{'
+MAIN.C(29): error C141: syntax error near '}'
+MAIN.C(30): error C141: syntax error near 'unsigned'
+MAIN.C(30): error C141: syntax error near '{'
+MAIN.C(30): error C141: syntax error near '}'
+MAIN.C(31): error C141: syntax error near 'unsigned'
+MAIN.C(32): error C141: syntax error near 'unsigned'
+MAIN.C(32): error C202: 'tenth': undefined identifier
+MAIN.C(33): error C141: syntax error near 'unsigned'
+MAIN.C(33): error C202: 'oneth': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(28): warning C280: 'a': unreferenced local variable
+MAIN.C(28): warning C280: 'b': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPLAY8279?MAIN
+Program Size: data=38.0 xdata=0 code=511
+"main" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPLAY8279?MAIN
+Program Size: data=35.0 xdata=0 code=602
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=35.0 xdata=0 code=609
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=35.0 xdata=0 code=609
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(58): error C141: syntax error near 'display8279'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=35.0 xdata=0 code=625
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETAD?MAIN
+Program Size: data=35.0 xdata=0 code=641
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=36.0 xdata=0 code=659
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=36.0 xdata=0 code=659
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=36.0 xdata=0 code=659
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(67): error C158: '_setDA': function contains unnamed parameter
+MAIN.C(68): error C202: 'a': undefined identifier
+MAIN.C(69): error C202: 'a': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETDA?MAIN
+Program Size: data=36.0 xdata=0 code=673
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=36.0 xdata=0 code=676
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=36.0 xdata=0 code=683
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=37.0 xdata=0 code=691
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=37.0 xdata=0 code=697
+"main" - 0 Error(s), 0 Warning(s).

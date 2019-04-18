@@ -1,0 +1,116 @@
+C51 COMPILER V7.06   MAIN                                                                  04/17/2019 20:46:47 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include "reg52.h"
+   2          #include "absacc.h"
+   3          #define uint unsigned int
+   4          #define uchar unsigned char
+   5          #define AD0809IN0 XBYTE[0xCFA0]
+   6          #define DA0832_1 XBYTE[0x0CFA8]
+   7          #define DA0832_2 XBYTE[0x0CFA9]
+   8          #define CON8279 XBYTE[0x0CFE9]
+   9          #define DATA8279 XBYTE[0x0CFE8]
+  10          sbit LED = P1^0;
+  11          sbit AD_EOC = P1^1;
+  12          sbit KEY_1 = P1^2;
+  13          sbit KEY_2 = P1^3;
+  14          uchar AUTO = 0;
+  15          // delay function use to wait sign. unit is ms;
+  16          void delay(uint t){
+  17   1              uint x,y;
+  18   1              for(x=t;x>0;x--)
+  19   1                      for(y=59;y>0;y--);
+  20   1      }
+  21          
+  22          // test Functon
+  23          void test(){
+  24   1              delay(1000);
+  25   1              LED = ~LED;
+  26   1      }
+  27          // clear screen
+  28          void clear8279(){
+  29   1              CON8279 = 0xD1;
+  30   1              delay(1);
+  31   1      }
+  32          // displayed on srceen,a==1 to show first to thrid,2 anther
+  33          void display8279 (uchar a, uchar b){
+  34   1              uchar a_[6] = {0x80,0x81,0x82,0x83,0x84,0x85};
+  35   1              uchar b_[17] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71,0x40};
+  36   1              uchar hunderth = 0;
+  37   1              uchar tenth = 0;
+  38   1              uchar oneth = 0;
+  39   1              hunderth = b/100;
+  40   1              tenth = (b%100)/10;
+  41   1              oneth = b%10;
+  42   1              if(a==2){
+  43   2                      a=4;
+  44   2              }
+  45   1              CON8279 = a_[a-1];
+  46   1              delay(1);
+  47   1              DATA8279 = b_[hunderth];
+  48   1              delay(1);
+  49   1              CON8279 = a_[a];
+  50   1              delay(1);
+  51   1              DATA8279 = b_[tenth];
+  52   1              delay(1);
+  53   1              CON8279 = a_[a+1];
+  54   1              delay(1);
+  55   1              DATA8279 = b_[oneth];
+C51 COMPILER V7.06   MAIN                                                                  04/17/2019 20:46:47 PAGE 2   
+
+  56   1      }
+  57          // read AD;
+  58          uchar getAD(){
+  59   1              uchar ret = 1;
+  60   1              AD0809IN0 = ret;
+  61   1              while(!AD_EOC){
+  62   2              }
+  63   1              ret = AD0809IN0;
+  64   1              return ret;
+  65   1      }
+  66          // set DA;
+  67          void setDA(uchar a){
+  68   1              //DA0832_1 = a;
+  69   1              DA0832_1 = a;
+  70   1              delay(1);
+  71   1              DA0832_2 = a;
+  72   1              delay(1);
+  73   1      }
+  74          void main(){
+  75   1              uchar template = 135;
+  76   1              uchar AD = 0;
+  77   1              clear8279();
+  78   1              display8279(2,120);
+  79   1              while(1){
+  80   2                      clear8279();
+  81   2                      if(AD <= template){
+  82   3                              setDA(255);
+  83   3                      }else{
+  84   3                              setDA(0);
+  85   3                      }
+  86   2                      
+  87   2                      display8279(2,AD);
+  88   2                      AD = getAD();
+  89   2                      test();
+  90   2              }
+  91   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    281    ----
+   CONSTANT SIZE    =     23    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1      27
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
